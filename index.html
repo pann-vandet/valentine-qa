@@ -1381,6 +1381,10 @@
             }, durationMs);
         }
 
+        lockCard.addEventListener("click", () => pinInput.focus());
+        document.getElementById("dots").addEventListener("click", () => pinInput.focus());
+
+
         /***********************
          * End screen
          ***********************/
