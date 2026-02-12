@@ -905,10 +905,14 @@
         }
 
         /* Hidden input (still focusable) */
-        .pinInput {
-            position: absolute;
-            opacity: 0;
-            pointer-events: none;
+       /* Hidden input BUT still focusable (mobile keyboard works) */
+        .pinInput{
+          position: absolute;
+          left: -9999px;   /* off-screen */
+          top: 0;
+          width: 1px;
+          height: 1px;
+          opacity: 0;
         }
 
         .lockMsg {
