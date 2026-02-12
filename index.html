@@ -1381,9 +1381,6 @@
             }, durationMs);
         }
 
-        lockCard.addEventListener("click", () => pinInput.focus());
-        document.getElementById("dots").addEventListener("click", () => pinInput.focus());
-
 
         /***********************
          * End screen
@@ -1559,6 +1556,17 @@ Happy Valentine’s Day ❤️`;
                 console.error("Passcode lock: missing elements:", missing.join(", "));
                 return;
             }
+
+            const dotsContainer = document.getElementById("dots");
+
+            if (lockCard && pinInput) {
+              lockCard.addEventListener("click", () => pinInput.focus());
+            }
+            
+            if (dotsContainer && pinInput) {
+              dotsContainer.addEventListener("click", () => pinInput.focus());
+            }
+
 
             function updateDots(val) {
                 dots.forEach((d, i) => d.classList.toggle("filled", i < val.length));
